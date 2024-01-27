@@ -13,6 +13,7 @@ const (
 	SONS         = "sons"
 	DAUGHTERS    = "daughters"
 	WIVES        = "wives"
+	HP           = "--help"
 )
 
 var RelationMap = map[string]string{"sons": "son", "daughters": "daughter", "wives": "spouse"}
