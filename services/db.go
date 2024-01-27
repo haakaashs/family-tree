@@ -88,3 +88,12 @@ func getPersonName(s string) {
 		First(&father)
 	fmt.Printf("%s is the father of %s\n", father, s)
 }
+
+func getRelation() {
+	var person []utils.Person
+	utils.Conn.Model(&utils.Person{}).Find(&person)
+	fmt.Println("Name        Gender")
+	for _, per := range person {
+		fmt.Printf("%s   ------->   %s\n", per.Name, per.Gender)
+	}
+}

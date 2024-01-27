@@ -15,6 +15,7 @@ import (
 // family-tree count daughter of haak
 // family-tree count wifes of haak
 // family-tree father of haak
+// family-tree get person
 func Commands() {
 	switch os.Args[1] {
 	case utils.ADD:
@@ -25,7 +26,6 @@ func Commands() {
 			addPerson(os.Args[2], os.Args[3])
 			return
 		}
-		fmt.Println(os.Args, len(os.Args))
 		help()
 		os.Exit(0)
 	case utils.CONNECT:
@@ -46,7 +46,13 @@ func Commands() {
 			os.Exit(0)
 		}
 		getPersonName(os.Args[3])
-
+	case utils.GET:
+		if os.Args[2] != utils.PERSON || len(os.Args) != 3 {
+			help()
+			os.Exit(0)
+			return
+		}
+		getRelation()
 	default:
 		help()
 	}

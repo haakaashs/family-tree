@@ -5,6 +5,8 @@ const (
 	RELATIONSHIP = "relationship"
 	CONNECT      = "connect"
 	COUNT        = "count"
+	GET          = "get"
+	PERSON       = "person"
 	FATHER       = "father"
 	AS           = "as"
 	OF           = "of"
